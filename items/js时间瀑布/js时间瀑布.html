@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    :root,
+    body{
+        height: 100%;
+        background-color: #000;
+    }
+    div{
+        transition: all 1s linear;
+    }
+    .clock{
+        color: #fff;
+        font-size: 50px;
+        font-weight: bold;
+        position: relative;
+        width: 350px;
+        height: 800px;
+        left: calc(50% - 175px);
+        top: calc(50% - 400px);
+    }
+    .clock .time{
+        position: absolute;
+        height: 50px;
+        width: 100px;
+        top: 375px;
+    }
+    .clock .time .column{
+        position: absolute;
+        border: 1px solid #fff;      
+    }
+    .clock .time .column div{
+        height: 50px;
+    }
+    .column.two{
+        left: 50px;
+    }
+    .clock .minute{
+        left: 120px;
+    }
+    .clock .second{
+        left: 240px;
+    }
+    </style>
+</head>
+<body>
+
+        <div class="clock">
+
+            <div class="time hour">
+                <div class="column">
+                    <div>0</div>
+                    <div>1</div>
+                    <div>2</div>
+                </div>
+                <div class="column two"></div>    
+            </div>
+
+            <div class="time minute">
+                <div class="column one"></div>
+                <div class="column two"></div>
+            </div>
+
+            <div class="time second">
+                <div class="column one"></div>
+                <div class="column two"></div>    
+            </div>
+
+        </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>

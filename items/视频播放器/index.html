@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <video src="./张杰-三生三世 (《三生三世十里桃花》电视剧主题曲)(超清).mp4"></video>
+        <div class="mix">
+            <div class="play">播放</div>
+            <div class="proBar">
+                <div class="curProBar"></div>
+            </div>
+            <div class="voice">
+                <span>减小</span>
+                <span>增大</span>
+            </div>
+            <div class="full">全屏</div>
+        </div>    
+        <span id="ct">00:00 / 00:00</span>
+        <div id="quick">倍速</div>
+        <div class="faster">
+            <li>1.0</li>
+            <li>1.25</li>
+            <li>1.5</li>
+            <li>2.0</li>
+        </div>
+        
+    </div>
+    <script>
+        var wrapper = document.getElementsByClassName('wrapper')[0];
+        var video = document.getElementsByTagName('video')[0];
+        var play = document.getElementsByClassName('play')[0];
+        var mix = document.getElementsByClassName('mix')[0];
+        var proBar = document.getElementsByClassName('proBar')[0];
+        var cur = document.getElementsByClassName('curProBar')[0];
+        var timer = null;
+        var faster = document.getElementsByClassName('faster')[0];
+        wrapper.querySelector('#quick').onclick = function () { 
+            faster.classList.toggle('show');
+            faster.onclick = function (e) { 
+                var num = e.target.innerText;
+                switch (parseFloat(num)) {
+                    case 0:
+                        video.playbackRate = 1;
+                        break;
+                    case 1:
+                        video.playbackRate = 1.25;
+                        break;
+                    case 2: 
+                        video.playbackRate = 1.5;
+                        break;
+                    case 3: 
+                        video.playbackRate = 2;
+                        break;
+                    default:
+                        break;
+                } 
+                faster.classList.remove('show');
+                wrapper.querySelector('#quick').innerText = e.target.innerText;
+             }
+        }
+        proBar.onclick = function (e) { 
+            clearInterval(timer);
+            cur.style.width = e.layerX + 'px';
+            video.currentTime = parseInt(e.layerX / proBar.clientWidth * video.duration);
+            start();
+         }
+         function setTime() { 
+            var total = video.duration;
+            var now = video.currentTime;
+            var time = document.getElementById('ct');
+            time.innerText = parseInt(now / 60) + ':' + parseInt(now % 60) + ' / ' + parseInt(total / 60) + ':' + parseInt(total % 60)
+          }
+         function start() {   
+            timer = setInterval(() => {
+                    var total = video.duration;
+                    var now = video.currentTime;
+                    cur.style.width = (now / total).toFixed(2)*100 + '%' ;
+                    setTime();
+                }, 1000);
+          }
+        mix.onmouseenter = function () { 
+            proBar.style.height = '10px';
+            proBar.style.top = '-5px';
+         }
+        mix.onmouseleave = function () { 
+             proBar.style.height = '2px';
+             proBar.style.top = '0px';
+         }
+        wrapper.onmouseenter = function () { 
+            mix.style.display = 'block';
+            ct.style.display = 'block';
+            quick.style.display = 'block';
+        }
+         wrapper.onmouseleave = function () {
+            mix.style.display = 'none';
+            ct.style.display = 'none';
+            quick.style.display = 'none';
+        }
+        var voice = document.getElementsByClassName('voice')[0];
+        voice.onclick = function (e) { 
+            if(e.target.innerText == '增大' && video.volume < 1){
+                video.volume += 0.1;
+            }else if(e.target.innerText == '减小' && video.volume> 0){
+                video.volume -= 0.1;
+            }else{
+                return;
+            }
+         }
+         var full = document.getElementsByClassName('full')[0];
+         full.onclick = function () { 
+             var dom = document.documentElement;
+             dom.requestFullscreen();
+             var h = window.screen.height;
+             var w = window.screen.width;
+             wrapper.style.width = w + 'px';
+             wrapper.style.height = h + 'px';
+             video.style.width = w + 'px';
+             video.style.height = h + 'px';
+
+          }
+        
+        play.onclick = function () { 
+            if(video.paused){
+                video.play();
+                play.innerText = '暂停';
+                clearInterval(timer);
+                start();
+            }else{
+                video.pause();
+                play.innerText = '播放';
+            }
+         }
+    </script>
+</body>
+</html>

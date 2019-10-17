@@ -1,0 +1,160 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+:root,
+body{
+    height: 100%;
+    
+}
+.loading{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(100, 50, 255, 0.5);
+}
+.complete{
+    height: 100%;
+    width: 100%;
+    display: none;
+    background-color: rgba(241, 176, 187, 0.8);
+}
+.text {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    color: azure;
+    text-shadow: 1px 1px 1px #fff;
+    left: calc(50% - 100px);
+    top: calc(50% - 100px);
+}
+
+.red {
+     height: 70px;
+     width: 70px;
+     position: absolute;
+     background-color: tomato;
+     left: calc(50% + 100px);
+     top: calc(50% - 60px);
+     border-radius: 8px;
+     animation: run1 0.5s linear 0.5s infinite alternate;
+}
+
+.red::after,
+.red::before {
+    position: absolute;
+    content: '';
+    height: 10px;
+    width: 6px;
+    background-color: #fff;
+    left: calc(50% - 3px);
+    top: -8px;
+    transform-origin: 3px 10px;
+    border-radius: 3px 3px 0 0;
+}
+.red::after{   
+    transform: translateX(-3px) rotate(45deg);
+}
+.red::before{
+   transform: rotate(-45deg);
+}
+
+.blue {
+     height: 70px;
+     width: 70px;
+     position: absolute;
+     background-color: rgb(84, 10, 154);
+     left: calc(50% + 210px);
+     top: calc(50% - 60px);
+     border-radius: 8px;
+     animation: run1 0.5s linear infinite alternate;
+}
+.blue::after,
+.blue::before {
+    position: absolute;
+    content: '';
+    height: 10px;
+    width: 6px;
+    background-color: #fff;
+    left: calc(50% - 3px);
+    top: -8px;
+    transform-origin: 3px 10px;
+    border-radius: 3px 3px 0 0;
+}
+.blue::before {
+    transform: rotate(-45deg);
+}
+.blue::after {
+    transform: translateX(-3px) rotate(45deg);
+}
+
+.circle {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    left: 25px;
+    top: 15px;
+    background-color: azure;
+    border-radius: 50%;
+}
+
+.ell {
+    position: absolute;
+    left: 25px;
+    bottom: 10px;
+    height: 10px;
+    width: 25px;
+    background-color: azure;
+    border-radius: 3px;
+}
+.circle::after{
+    content: '';
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    right: 0px;
+    top: calc(50% - 6px);
+    border-radius: 50%;
+    background-color: rgb(84, 10, 154);
+    animation: run2 .5s linear infinite alternate;
+}
+.circle.two::after {
+    background-color: tomato;
+}
+@keyframes run1{
+    from{
+        top: calc(50% - 60px);
+    }
+    to{
+        top: calc(50% - 100px);
+    }
+}    
+
+@keyframes run2 {
+    from {
+        right: 0px;
+    }
+
+    to {
+        right: 13px;
+    }
+}
+
+.loading .red{
+    left: calc(50% - 25px);
+}
+
+.proBar{
+    height: 7px;
+    width: 200px;
+    border-radius: 2px;
+    background-color: aliceblue;
+    position: absolute;
+    left: calc(50% - 100px);
+    top: 60%;
+}
+.curBar{
+    height: 7px;
+    width: 0px;
+    background-color: tomato;
+}

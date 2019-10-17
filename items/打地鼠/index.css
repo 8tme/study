@@ -1,0 +1,94 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+:root,
+body,
+.game{
+    height: 100%;
+}
+.ground{
+    height: 550px;
+    width: 750px;
+    background-image: url('./img/bg_canvas.png');
+    background-size: 100% 100%;
+    position: relative;
+    left: calc(50% - 375px);
+    top: calc(50% - 275px);   
+    border: 1px solid;
+    perspective: 800px;
+    cursor: url('./img/hammer.png'), auto;
+}
+.score{
+    height: 30px;
+    width: 100px;
+    background-image: url('./img/score.png');
+    background-size: 60px 30px;
+    background-repeat: no-repeat;
+    text-align: end;
+    font-size: 25px;
+    font-weight: bold;
+    color: aliceblue;
+    position: absolute;
+    right: 30%;
+    top: 30%;
+}
+.live{
+    height: 30px;
+    width: 120px;
+    font-size: 25px;
+    font-weight: bold;
+    color: aliceblue;
+    position: absolute;
+    right: 10%;
+    top: 30%;
+}
+.live span{
+    margin-left: 8px;
+}
+.hasimg{
+    position: absolute;
+    height: 62px;
+    width: 140px;
+    overflow: hidden;
+    left: 16%;  
+    bottom: 50%;
+}
+.hasimg .img{
+    position: absolute;
+    top: 100%;
+    height: 125px;
+    width: 140px;
+    background-image: url('./img/hit1.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    animation: goin 1s linear forwards;
+}
+.img.fadeout{
+    animation: goout 1s linear forwards;
+}
+.mouse{
+    background-image: url('./img/hit1.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: all 2s linear;
+    overflow: hidden;
+    z-index: -1;
+}
+@keyframes goout{
+    from{
+        top: 0;
+    }
+    to{
+        top: 100%;
+    }
+}
+@keyframes goin{
+    from{
+        top: 100%;
+    }
+    to{
+        top: 0;
+    }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        :root,
+        body {
+            height: 100%;
+            
+        }
+        body{
+            background-color: #000;
+            perspective: 2000px;
+        }
+        @keyframes run{
+            from{
+            transform: translate(0px, 0px) translateZ(0px) rotate(0deg) rotatex(0deg) rotatey(0deg) rotatez(0deg);
+        }
+        50%{
+            transform: translate(-100px, -100px) translateZ(-200px) rotate(180deg) rotatex(180deg) rotatey(180deg) rotatez(180deg);
+        }
+        to{
+            transform: translate(0px, 0px) translateZ(200px) rotate(360deg) rotatex(360deg) rotatey(360deg) rotatez(360deg);
+        }
+        }
+        .wrapper{
+            position: absolute;
+            left: calc(50% - 100px);
+            top: calc(50%); 
+            perspective-origin: 50% 50% -200px; 
+            transform-style: preserve-3d;
+            animation: run 8s linear infinite;
+        }
+        .box{
+            perspective: 800px;
+            transform-style: preserve-3d;
+            transform: rotate(0);
+        }
+        .box div {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+                    
+            /* transform-style: preserve-3d; */
+
+        }
+
+        .box div img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .z {
+            transform: translateZ(100px);
+        }
+
+        .f {
+            transform: translateZ(-100px);
+        }
+
+        .l {
+            transform: translate(-100px,0) rotateY(-90deg);
+        }
+
+        .r {
+            transform: translateX(100px) rotateY(90deg);
+        }
+
+        .t {
+            transform: translateY(-100px) rotateX(90deg);
+        }
+
+        .b {    
+            transform: translateY(100px) rotateX(-90deg);
+        }
+        
+        .heart{
+            position: absolute;
+            left: calc(50% - 122px);
+            top: calc(50% - 122px);
+            transform-origin: 217px 108px 0;
+            background-color: #fff;
+        }
+        .heart:before{
+            position: absolute;
+            content: '';
+            height: 500px;
+            width: 300px;
+            border: 1px solid #faa;
+            border-radius: 300px 300px 0 0;
+            transform: rotate(-45deg);
+            left: 0px;
+        }
+        .heart:after{
+            position: absolute;
+            content: '';
+            height: 500px;
+            width: 300px;
+            border: 1px solid #faa;
+            border-radius: 300px 300px 0 0;
+            transform: rotate(45deg);
+            left: 142px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <div class="z"><img src="../手风琴切换图片/img/1.jpg" alt=""></div>
+            <div class="f"><img src="../手风琴切换图片/img/2.jpg" alt=""></div>
+            <div class="l"><img src="../手风琴切换图片/img/3.jpg" alt=""></div>
+            <div class="r"><img src="../手风琴切换图片/img/4.jpg" alt=""></div>
+            <div class="t"><img src="../手风琴切换图片/img/5.jpg" alt=""></div>
+            <div class="b"><img src="../手风琴切换图片/img/1.jpg" alt=""></div>
+    
+        </div>
+    </div>
+<script>
+    let wrapper = document.getElementsByTagName('div')[0];
+    for(let i = 0; i < 6; i ++){
+        let ele = document.createElement('span');
+        ele.className = 'heart';   
+        wrapper.appendChild(ele);
+        ele.style.transform = 'rotateY(' + 30*i + 'deg)';
+    }
+
+</script>
+</body>
+
+</html>

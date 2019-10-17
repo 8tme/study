@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="demo.css" />
+  </head>
+  <body>
+    <!-- 加载界面 -->
+    <div class="loading">
+      <div class="red">
+        <div class="circle"></div>
+        <div class="ell"></div>
+      </div>
+      <div class="proBar">
+        <div class="curBar"></div>
+      </div>
+    </div>
+    <!-- 加载完成界面 -->
+    <div class="complete">
+      <div class="text">
+        <h1>We are SQUARE MONSTER!</h1>
+        <br />
+        <h3>Ahhh We' ll eat you</h3>
+      </div>
+      <div class="red">
+        <div class="circle"></div>
+        <div class="ell"></div>
+      </div>
+      <div class="blue">
+        <div class="circle two"></div>
+        <div class="ell"></div>
+      </div>
+    </div>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script>
+      var timer = setTimeout(() => {
+        var w = 0;
+        var t = setInterval(() => {
+          w += 5;
+          $(".curBar").css("width", w + "%");
+          if (w === 100) {
+            clearInterval(t);
+            clearTimeout(timer);
+            $(".loading").fadeOut();
+            var st = setTimeout(() => {
+                $(".complete").fadeIn();
+                clearTimeout(st);
+            }, 500);
+          }
+        }, 100);
+      }, 1500);
+    </script>
+  </body>
+</html>

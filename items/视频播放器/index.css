@@ -1,0 +1,143 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.wrapper{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 0px auto;
+    color: azure;
+    font-size: 20px;
+}
+.wrapper video{
+    /* border: 1px solid #bfb; */
+    position: absolute;
+    height: 500px;
+    width: 800px;
+}
+.mix{
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(74, 74, 74, 0.5);
+    display: none;
+}
+.play{
+    height: 30px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid rgba(78, 76, 76,0.4);
+    position: absolute;
+    bottom: 10px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 5px #bfb,
+    -1px -1px 5px #bfb;
+}
+.play:hover{
+    background-color: rgba(173, 236, 193, 0.3);
+    
+}
+.proBar{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: aliceblue;
+    overflow: hidden;
+}
+.curProBar{
+    width: 0px;
+    height: 100%;
+    background-color: cornflowerblue;
+}
+.curProBar::after{
+    content: '';
+    /* position: absolute; */
+    float: right;
+    height: 10px;
+    width: 10px;
+    border-radius: 2px;
+    background-color: tomato;
+}
+.voice{
+    height: 30px;
+    width: 120px;
+    position: absolute;
+    right: 150px;
+    bottom: 10px;
+    float: left;
+}
+.voice span{
+    height: 30px;
+    width: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 5px #bfb,
+    -1px -1px 5px #bfb;
+}
+.voice span:hover{
+    background-color: rgba(231, 231, 222, 0.3);
+}
+.full{
+     position: absolute;
+     height: 30px;
+     width: 50px;
+     border-radius: 5px;
+     left: 300px;
+     bottom: 10px;
+     line-height: 30px;
+     text-align: center;
+}
+#ct{
+    position: absolute;
+    height: 50px;
+    line-height: 50px;
+    bottom: 0px;
+    left: 100px;
+    display: none;
+}
+.show{
+    position: absolute;
+    height: 120px;
+    width: 80px;
+    right: 50px;
+    bottom: 50px;
+    border: 1px solid rgba(240, 239, 239, 0.2);
+    box-sizing: border-box;
+}
+.show li{
+    height: 29px;
+    border-bottom: 1px solid rgba(240, 235, 235, 0.3);
+    width: 100%;
+    text-align: center;
+    line-height: 29px;
+    /* display: none; */
+}
+#quick{
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 50px;
+    width: 80px;
+    height: 39px;
+    text-align: center;
+    line-height: 39px;
+    text-shadow: 1px 1px 5px #bfb,
+    -1px -1px 5px #bfb;
+}
+.faster li:hover{
+    cursor: pointer;
+    background-color: rgb(216, 220, 224);
+    color: rgb(139, 136, 231);
+}
+#quick:hover{
+    cursor: pointer;
+    background-color: rgba(203, 233, 223, 0.1);
+
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        :root,
+        body {
+            height: 100%;
+            background-color: rgb(0, 0, 0);
+            perspective: 1000px;
+            perspective-origin: 50% 50% 0;
+
+        }
+        @keyframes run{
+        from{
+            transform: translate(0px, 0px) translateZ(0px) rotate(0deg) rotatex(0deg) rotatey(0deg) rotatez(0deg);
+        }
+        50%{
+            transform: translate(-100px, -100px) translateZ(-200px) rotate(180deg) rotatex(180deg) rotatey(180deg) rotatez(180deg);
+        }
+        to{
+            transform: translate(0px, 0px) translateZ(200px) rotate(360deg) rotatex(360deg) rotatey(360deg) rotatez(360deg);
+        }
+    }
+
+        .wrapper {
+            position: relative;
+            transform-style: preserve-3d;
+            left: calc(50% - 100px);
+            top: calc(50% - 100px);
+            transform-origin: 100px 100px 0px;
+            animation: run 8s linear infinite;
+            /* transform: rotate(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg); */
+        }
+        .wrapper div{
+            position: absolute;
+            height: 200px;
+            width: 200px; 
+            
+        }
+        .t {
+            background-color: rgb(0, 255, 0);
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .b {
+            background-color: rgb(125, 122, 244);
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        .l {
+            background-color: rgb(255, 2, 155);
+            transform: rotateY(-90deg) translateZ(-100px);
+        }
+
+        .r {
+            background-color: rgb(125, 2, 25);
+            transform: rotateY(90deg) translateZ(-100px);
+        }
+
+        .z {
+            background-color: rgb(25, 255, 255);
+            transform: translateZ(100px);
+        }
+
+        .f {
+            background-color: rgb(255, 255, 0);
+            transform: translateZ(-100px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="t"></div>
+        <div class="b"></div>
+        <div class="l"></div>
+        <div class="r"></div>
+        <div class="z"></div>
+        <div class="f"></div>
+    </div>
+</body>
+
+</html>

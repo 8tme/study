@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        :root,
+        body {
+            height: 100%;
+            background-color: #000;
+        }
+
+        .clock {
+            position: relative;
+            height: 50px;
+            width: 450px;
+            border: 1px solid #fff;
+            left: calc(50% - 225px);
+            top: calc(50% - 25px);
+            color: #fbb;
+            font-size: 50px;
+            font-weight: bold;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .clock .column {
+            width: 50px;
+            display: inline-block;
+            border: 1px solid #bbf;
+            vertical-align: top;
+        }
+
+        .clock span {
+            display: inline-block;
+            width: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="column">
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+        </div>
+        <div class="column ten"></div>
+
+        <span>:</span>
+        <div class="column six"></div>
+        <div class="column ten"></div>
+
+        <span>:</span>
+        <div class="column six"></div>
+        <div class="column ten"></div>
+    </div>
+    <script>
+        P.prototype.name = 's';
+
+        function P() {}
+        var p = new P();
+        P.prototype = {
+            constructor: P,
+            name : 'b'
+        }
+    </script>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script src="./demo.js"></script>
+</body>
+
+</html>

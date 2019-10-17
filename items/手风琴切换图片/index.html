@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+        }
+        :root,
+        body{
+            width: 100%;
+        }
+        .wrapper{
+            position: relative;
+            height: 320px;
+            width: 1000px;
+        }
+        .wrapper li {
+            float: left;
+            position: relative;
+            height: 300px;
+            width: 200px;
+            overflow: hidden;
+            transition: all 1s linear;
+        }
+        .wrapper li img{
+            height: 300px;
+            width: 400px;
+        }
+        .wrapper li p{
+            color: snow;
+            font-size: 24px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            height: 50px;
+            width: 400px;
+            bottom: 20%;
+            background-color: rgba(3, 3, 3, 0.1);
+        }
+        .wrapper:hover li{
+            width: 80px;
+        }
+        .wrapper li:hover{
+            width: 400px;
+        }
+       
+    </style>
+</head>
+<body>
+    <ul class="wrapper">
+        <li><img src="./img/1.jpg" alt=""><p>云南大理</p></li>
+        <li><img src="./img/2.jpg" alt=""><p>广西桂林</p></li>
+        <li><img src="./img/3.jpg" alt=""><p>福建厦门</p></li>
+        <li><img src="./img/4.jpg" alt=""><p>浙江千岛湖</p></li>
+        <li><img src="./img/5.jpg" alt=""><p>长江三峡</p></li>
+    </ul>
+</body>
+</html>

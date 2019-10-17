@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .box {
+            position: absolute;
+            height: 400px;
+            width: 400px;
+            border-radius: 50%;
+            box-sizing: border-box;
+            border: 1px solid #f77;
+            left: calc(50% - 200px);
+            top: calc(50% - 200px);
+            /* transition: all 5s linear .5s; */
+        }
+
+        .box img {
+            height: 400px;
+            width: 400px;
+        }
+
+        #button {
+            position: absolute;
+            height: 130px;
+            width: 130px;
+            border-radius: 50%;
+            left: calc(50% - 65px);
+            top: calc(50% - 65px);
+        }
+
+        #button img {
+            position: absolute;
+            /* height: 152.41px; */
+            top: -23px;
+            width: 130px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box">
+            <img src="./pan.png" alt="">
+        </div>
+        <div id="button">
+            <img src="./btn.png" alt="">
+        </div>
+    </div>
+    <script src="../tools/jquery-3.3.1.min.js"></script>
+    <script src="../tools/lottery.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
